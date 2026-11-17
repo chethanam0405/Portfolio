@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #070709;
+  --smoked-onyx: #0E0E12;
+  --carbon-slate: #15151B;
+  --alabaster: #F8FAFC;
+  --cool-silver: #94A3B8;
+  --cobalt: #10B981;
+  --cobalt-dark: #059669;
+  --violet: #8B5CF6;
+  --violet-dark: #6D28D9;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #070709;
+  color: #F8FAFC;
+}
+
+body {
+  background-color: #070709;
+  color: #F8FAFC;
+  font-family: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #10B981;
+  selection-color: #ffffff;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.35);
+  color: #F8FAFC;
+}
+
+/* Zero blur filters on all foreground typography */
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, label {
+  filter: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+/* Architectural Drafting Grid Background */
+.drafting-grid-pattern {
+  background-size: 64px 64px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+}
+
+.drafting-subgrid-pattern {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+}
+
+/* Caustic Light Animations */
+@keyframes caustic-drift-1 {
+  0% {
+    transform: translate(-20%, -10%) scale(1) rotate(0deg);
+    opacity: 0.28;
+  }
+  33% {
+    transform: translate(25%, 15%) scale(1.15) rotate(45deg);
+    opacity: 0.38;
+  }
+  66% {
+    transform: translate(-15%, 25%) scale(0.9) rotate(90deg);
+    opacity: 0.24;
+  }
+  100% {
+    transform: translate(-20%, -10%) scale(1) rotate(0deg);
+    opacity: 0.28;
+  }
+}
+
+@keyframes caustic-drift-2 {
+  0% {
+    transform: translate(30%, 20%) scale(1.1) rotate(0deg);
+    opacity: 0.25;
+  }
+  33% {
+    transform: translate(-20%, -15%) scale(0.95) rotate(-60deg);
+    opacity: 0.35;
+  }
+  66% {
+    transform: translate(15%, -25%) scale(1.2) rotate(-120deg);
+    opacity: 0.22;
+  }
+  100% {
+    transform: translate(30%, 20%) scale(1.1) rotate(0deg);
+    opacity: 0.25;
+  }
+}
+
+.animate-caustic-1 {
+  animation: caustic-drift-1 26s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-caustic-2 {
+  animation: caustic-drift-2 32s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Hairline border utility */
+.hairline-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-border-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-border-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
